@@ -1,0 +1,19 @@
+{
+    "name": "Cobilas.Unity.Management.Runtime",
+    "references": [
+        "Cobilas.Unity.Utility",
+        "Cobilas.Unity.Extensions"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Cobilas.Collections.dll",
+        "CobilasCore.Extension.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
