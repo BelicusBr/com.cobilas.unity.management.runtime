@@ -1,8 +1,10 @@
 {
   "name": "com.cobilas.unity.management.runtime",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "displayName": "Cobilas Management Runtime",
   "description": "Pacote de gerenciamento runtime para unity3d",
+    "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
+  "changelogUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/CHANGELOG.md",
   "unity": "2019.1",
   "unityRelease": "0b5",
   "type": "library",
@@ -17,6 +19,6 @@
   },
   
   "relatedPackages": {
-    "com.cobilas.unity.management.runtime": "1.0.0"
+    "com.cobilas.unity.management.runtime": "1.0.5"
   }
 }
