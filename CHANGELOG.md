@@ -1,4 +1,9 @@
 # Changelog
+## [1.0.6] 27/07/2022
+- Fix CHANGELOG.md
+- Fix package.json
+- Fix CobilasRuntimeInitializeOnLoadMethod.cs
+- > A instrução `if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();` foi adicionada em `private static void Init(); private static void CheckCRIOLMPriority();`.
 ## [1.0.5] 23/07/2022
 - Add CHANGELOG.md
 - Fix package.json

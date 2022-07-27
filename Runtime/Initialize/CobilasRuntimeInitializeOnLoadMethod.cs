@@ -30,6 +30,7 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
 #if UNITY_2017 || UNITY_2018
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Init() {
+            if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
             BeforeSceneLoad();
             Application.quitting += ClearList;
@@ -37,6 +38,7 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
 #elif UNITY_2019_1_OR_NEWER
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void Init() {
+            if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
             Application.quitting += ClearList;
         }
@@ -63,6 +65,7 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
 #if UNITY_EDITOR
         [MenuItem("Tools/Cobilas/Check CRIOLM priority")]
         private static void CheckCRIOLMPriority() {
+            if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
 #warning CobilasBehaviour.ClearLog comentado
             //CobilasBehaviour.ClearLog();
