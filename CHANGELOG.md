@@ -1,4 +1,9 @@
 # Changelog
+## [1.0.7] 31/07/2022
+- Add CHANGELOG.md
+- Fix package.json
+- Add Cobilas MG Runtime.asset
+- Remove Runtime\DependencyWarning.cs
 ## [1.0.6] 27/07/2022
 - Fix CHANGELOG.md
 - Fix package.json
