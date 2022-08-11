@@ -1,4 +1,7 @@
 # Changelog
+## [1.0.8] 10/08/2022
+- Merge com.cobilas.unity.management.container@1.0.5
+- Merge com.cobilas.unity.management.build@1.0.5
 ## [1.0.7] 31/07/2022
 - Add CHANGELOG.md
 - Fix package.json

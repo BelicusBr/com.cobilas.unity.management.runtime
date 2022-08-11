@@ -1,6 +1,6 @@
 {
   "name": "com.cobilas.unity.management.runtime",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "displayName": "Cobilas Management Runtime",
   "description": "Pacote de gerenciamento runtime para unity3d",
     "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
@@ -23,6 +23,6 @@
   },
   
   "relatedPackages": {
-    "com.cobilas.unity.management.runtime": "1.0.7"
+    "com.cobilas.unity.management.runtime": "1.0.8"
   }
 }

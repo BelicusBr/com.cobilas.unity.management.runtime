@@ -2,7 +2,8 @@
     "name": "Cobilas.Unity.Management.Runtime",
     "references": [
         "Cobilas.Unity.Utility",
-        "Cobilas.Unity.Extensions"
+        "Cobilas.Unity.Extensions",
+        "Cobilas.Unity.Mono"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -10,26 +11,11 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "Cobilas.Collections.dll",
-        "CobilasCore.Extension.dll"
+        "CobilasCore.Extension.dll",
+        "CobilasCore.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.cobilas.cobilascore",
-            "expression": "1.0",
-            "define": "COBILAS_CORE"
-        },
-        {
-            "name": "com.cobilas.unity.utility",
-            "expression": "1.0",
-            "define": "COBILAS_UTILITY"
-        },
-        {
-            "name": "com.cobilas.unity.extensions",
-            "expression": "1.0",
-            "define": "COBILAS_EXTENSIONS"
-        }
-    ],
+    "versionDefines": [],
     "noEngineReferences": false
 }
