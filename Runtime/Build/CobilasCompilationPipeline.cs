@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEditor.Compilation;
 
@@ -19,3 +20,4 @@ namespace Cobilas.Unity.Management.Build {
         }
     }
 }
+#endif

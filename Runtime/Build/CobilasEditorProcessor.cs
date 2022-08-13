@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEditor;
 
@@ -40,3 +41,4 @@ namespace Cobilas.Unity.Management.Build {
         }
     }
 }
+#endif
