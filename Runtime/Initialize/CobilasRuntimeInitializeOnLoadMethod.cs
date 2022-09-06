@@ -67,8 +67,6 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
         private static void CheckCRIOLMPriority() {
             if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
-#warning CobilasBehaviour.ClearLog comentado
-            //CobilasBehaviour.ClearLog();
             PrintCRIOLMPriority(CRIOLMType.BeforeSceneLoad);
             PrintCRIOLMPriority(CRIOLMType.AfterSceneLoad);
             RunList.Clear();
