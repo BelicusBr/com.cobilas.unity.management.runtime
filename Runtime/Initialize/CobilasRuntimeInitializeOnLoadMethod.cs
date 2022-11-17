@@ -28,7 +28,7 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
         private static Dictionary<CRIOLMType, RunItem> RunList = new Dictionary<CRIOLMType, RunItem>();
 
 #if UNITY_2017 || UNITY_2018
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Init() {
             if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
@@ -36,14 +36,14 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
             Application.quitting += ClearList;
         }
 #elif UNITY_2019_1_OR_NEWER
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void Init() {
             if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();
             Application.quitting += ClearList;
         }
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 #endif
         private static void BeforeSceneLoad() {
             RunItem runItem = RunList[CRIOLMType.BeforeSceneLoad];
@@ -63,7 +63,7 @@ namespace Cobilas.Unity.Management.RuntimeInitialize {
         }
 
 #if UNITY_EDITOR
-        [MenuItem("Tools/Cobilas/Check CRIOLM priority")]
+        //[MenuItem("Tools/Cobilas/Check CRIOLM priority")]
         private static void CheckCRIOLMPriority() {
             if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();
             GetCRIOLMPriority();

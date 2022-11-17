@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Cobilas.Unity.Management.RuntimeInitialize {
+    [Obsolete]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public sealed class CRIOLM_BeforeSceneLoadAttribute : CRIOLMBaseAttribute {
 
