@@ -15,6 +15,7 @@ namespace Cobilas.Unity.Management.Runtime {
 
         public BootPriorityAttribute(string idCall, AffiliationPriority bootType, long order) {
             this.order = order;
+            this.idCall = idCall;
             this.bootType = bootType;
         }
 

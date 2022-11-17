@@ -1,4 +1,8 @@
 # Changelog
+## [1.0.10] 17/11/2022
+### Change
+O `CobilasRuntimeInitializeOnLoadMethod` foi substituido pelo `StartMethodOnRun`,</br>
+o `StartMethodOnRun` mantem o suporte com o `CobilasRuntimeInitializeOnLoadMethod`.
 ## [1.0.8] 13/08/2022
 - Move Editor\CobilasBuildProcessor.cs > Runtime\Build\CobilasBuildProcessor.cs
 - Move Editor\CobilasCompilationPipeline.cs > Runtime\Build\CobilasCompilationPipeline.cs

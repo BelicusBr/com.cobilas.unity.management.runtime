@@ -5,7 +5,6 @@ using System.Reflection;
 using Cobilas.Collections;
 using Cobilas.Unity.Utility;
 using System.Collections.Generic;
-using Cobilas.Unity.Management.RuntimeInitialize;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -79,7 +78,7 @@ namespace Cobilas.Unity.Management.Runtime {
                 builder.Append((AffiliationPriority)I);
                 builder.Append("=====================\n");
                 for (int J = 0; J < temp.Count; J++)
-                    builder.AppendFormat("{0}:{1}\n", temp[J].Info.ReflectedType, temp[J].Info);
+                    builder.AppendFormat("{0} <[:]> {1}\n", temp[J].Info.ReflectedType, temp[J].Info);
                 Debug.Log(builder.ToString());
             }
         }
@@ -102,7 +101,7 @@ namespace Cobilas.Unity.Management.Runtime {
 
             for (int I = 0; I < ArrayManipulation.ArrayLength(startScene); I++) {
                 StartBaseSceneLoadAttribute sbsla = startScene[I].GetCustomAttribute<StartBaseSceneLoadAttribute>();
-                boots[sbsla.BootType].Add(new MethodManifest(startScene[I], sbsla.Order, sbsla.Priority));
+                boots[sbsla.BootType].Add(new MethodManifest(startScene[I], sbsla.IDCall, sbsla.Order, sbsla.Priority));
             }
 
             Old_BuildStockList(types, boots);

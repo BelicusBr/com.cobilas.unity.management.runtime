@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cobilas.Unity.Management.RuntimeInitialize {
+namespace Cobilas.Unity.Management.Runtime {
     [Obsolete]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public sealed class CRIOLM_CallWhenAttribute : CRIOLMBaseAttribute {

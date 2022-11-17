@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cobilas.Unity.Management.RuntimeInitialize {
+namespace Cobilas.Unity.Management.Runtime {
     public class CRIOLMBaseAttribute : Attribute {
         private int priority;
         protected CRIOLMType type;

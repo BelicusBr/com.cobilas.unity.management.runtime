@@ -48,6 +48,17 @@ namespace Cobilas.Unity.Management.Runtime {
                     ArrayManipulation.Add(manifests[I], ref newManifests);
             }
 
+            for (int I = 0; I < ArrayManipulation.ArrayLength(manifests); I++) {
+                switch (manifests[I].Priority) {
+                    case InitializePriority.High:
+                        ArrayManipulation.Insert(manifests[I], 0, ref newManifests);
+                        break;
+                    case InitializePriority.Low:
+                        ArrayManipulation.Add(manifests[I], ref newManifests);
+                        break;
+                }
+            }
+
             manifests = newManifests;
         }
     }

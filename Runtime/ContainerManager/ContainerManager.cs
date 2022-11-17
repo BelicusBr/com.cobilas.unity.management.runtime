@@ -4,7 +4,7 @@ using System.Reflection;
 using Cobilas.Collections;
 using Cobilas.Unity.Utility;
 using UnityEngine.SceneManagement;
-using Cobilas.Unity.Management.RuntimeInitialize;
+using Cobilas.Unity.Management.Runtime;
 using UEObject = UnityEngine.Object;
 
 namespace Cobilas.Unity.Management.Container {
@@ -24,7 +24,8 @@ namespace Cobilas.Unity.Management.Container {
             container == (Contentor)null ?
             container = CreateContainer("Cobilas itens[Container]", false) : container;
 
-        [CRIOLM_BeforeSceneLoad(CRIOLMPriority.Low)]
+        //[CRIOLM_BeforeSceneLoad(CRIOLMPriority.Low)]
+        [StartBeforeSceneLoad("#ContainerManager")]
         private static void Init() {
             Type[] types = UnityTypeUtility.GetAllTypes();
             for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++) {

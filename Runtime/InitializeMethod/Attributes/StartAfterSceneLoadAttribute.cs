@@ -10,10 +10,16 @@ namespace Cobilas.Unity.Management.Runtime {
         public StartAfterSceneLoadAttribute(long priority) :
             base(AffiliationPriority.StartLater, priority) { }
 
+        public StartAfterSceneLoadAttribute() :
+            base(AffiliationPriority.StartLater, 0L) { }
+
         public StartAfterSceneLoadAttribute(string idCall, InitializePriority priority) :
             base(idCall, AffiliationPriority.StartLater, priority) { }
 
         public StartAfterSceneLoadAttribute(string idCall, long priority) :
             base(idCall, AffiliationPriority.StartLater, priority) { }
+
+        public StartAfterSceneLoadAttribute(string idCall) :
+            base(idCall, AffiliationPriority.StartLater, 0L) { }
     }
 }
