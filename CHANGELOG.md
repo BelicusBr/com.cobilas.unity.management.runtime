@@ -1,4 +1,8 @@
 # Changelog
+## [1.0.11] 24/11/2022
+### Change
+O atributo `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]`
+foi adicionado em `void StartMethodOnRun.Init()` para a versão `UNITY_2019_2_OR_NEWER`.
 ## [1.0.10] 17/11/2022
 ### Change
 O `CobilasRuntimeInitializeOnLoadMethod` foi substituido pelo `StartMethodOnRun`,</br>

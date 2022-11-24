@@ -12,8 +12,9 @@ using UnityEditor;
 namespace Cobilas.Unity.Management.Runtime {
     public static class StartMethodOnRun {
         private static Dictionary<AffiliationPriority, BootContainer> boots;
-
-#if UNITY_2019_1_OR_NEWER
+#if UNITY_2019_2_OR_NEWER
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+#elif UNITY_2019_1_OR_NEWER
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
 #elif UNITY_2017_1_OR_NEWER
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
