@@ -3,7 +3,7 @@
 namespace Cobilas.Unity.Management.Container {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class AddToContainerAttribute : AddToContainerBaseAttribute {
-        private int[] indexScenes;
+        private readonly int[] indexScenes;
 
         public AddToContainerAttribute(bool doNotDuplicate, params int[] indexScenes) : base(doNotDuplicate)
             => this.indexScenes = indexScenes;

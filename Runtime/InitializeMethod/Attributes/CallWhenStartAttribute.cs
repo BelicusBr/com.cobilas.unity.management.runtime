@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using Cobilas.Collections;
 
 namespace Cobilas.Unity.Management.Runtime {
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
     public sealed class CallWhenStartAttribute : BaseLauncherAttribute {
-        private string[] idCall;
-        private InitializePriority priority;
+        private readonly string[] idCall;
+        private readonly InitializePriority priority;
 
         public string[] IDCall => idCall;
         public InitializePriority Priority => priority;

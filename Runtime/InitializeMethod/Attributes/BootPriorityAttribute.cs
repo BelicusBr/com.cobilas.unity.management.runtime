@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 
 namespace Cobilas.Unity.Management.Runtime {
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
     public class BootPriorityAttribute : StartBaseSceneLoadAttribute {
-        private long order;
-        private string idCall;
-        private InitializePriority priority;
-        private AffiliationPriority bootType;
+        private readonly long order;
+        private readonly string idCall;
+        private readonly InitializePriority priority;
+        private readonly AffiliationPriority bootType;
 
         public override long Order => order;
         public override string IDCall => idCall;

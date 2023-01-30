@@ -26,7 +26,9 @@ namespace Cobilas.Unity.Management.Container {
 
         //[CRIOLM_BeforeSceneLoad(CRIOLMPriority.Low)]
         [StartBeforeSceneLoad("#ContainerManager")]
+#pragma warning disable IDE0051 // Remover membros privados não utilizados
         private static void Init() {
+#pragma warning restore IDE0051 // Remover membros privados não utilizados
             Type[] types = UnityTypeUtility.GetAllTypes();
             for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++) {
                 AddToPermanentContainerAttribute permanentContainer = null;

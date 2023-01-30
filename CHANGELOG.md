@@ -1,4 +1,9 @@
 # Changelog
+## [1.0.12] - 30/01/2023
+### Changed
+- Remoção de atribuições desnecessárias.
+- Simplificação de operações matemáticas.
+- Transformando possiveis campos em `readonly`.
 ## [1.0.11] 24/11/2022
 ### Change
 O atributo `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]`

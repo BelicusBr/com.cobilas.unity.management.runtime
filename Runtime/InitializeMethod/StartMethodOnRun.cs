@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using System.Text;
 using System.Reflection;
@@ -117,7 +117,7 @@ namespace Cobilas.Unity.Management.Runtime {
                     for (int L = 0; L < 5; L++)
                         if (boots[(AffiliationPriority)L].ContainsIDCall(call.IDCall[J])) {
                             int index = boots[(AffiliationPriority)L].IDCallIndex(call.IDCall[J]);
-                            index = index + (call.Priority == InitializePriority.High ? 0 : 1);
+                            index += (call.Priority == InitializePriority.High ? 0 : 1);
                             boots[(AffiliationPriority)L].Insert(index,
                                 new MethodManifest(callMe[I], 0L, call.Priority));
                         }
@@ -131,7 +131,7 @@ namespace Cobilas.Unity.Management.Runtime {
             MethodInfo[] callMe = GetMethodWithAttribute<CRIOLM_CallWhenAttribute>(types);
             for (int I = 0; I < ArrayManipulation.ArrayLength(callMe); I++) {
                 CRIOLM_CallWhenAttribute call = callMe[I].GetCustomAttribute<CRIOLM_CallWhenAttribute>();
-                int index = 0;
+                int index;
                 if (call.Target == callMe[I].ReflectedType) {
                     Debug.LogError($"[CRIOLM]CallWhen.Target: {callMe[I]}");
                     continue;
@@ -164,7 +164,7 @@ namespace Cobilas.Unity.Management.Runtime {
             for (int I = 0; I < ArrayManipulation.ArrayLength(startScene); I++) {
                 CRIOLMBaseAttribute batt = startScene[I].GetCustomAttribute<CRIOLMBaseAttribute>();
                 long order = 0L;
-                InitializePriority priority = default(InitializePriority);
+                InitializePriority priority;
                 switch (batt.PriorityType) {
                     case CRIOLMPriority.Comum :
                         order = batt.Priority;

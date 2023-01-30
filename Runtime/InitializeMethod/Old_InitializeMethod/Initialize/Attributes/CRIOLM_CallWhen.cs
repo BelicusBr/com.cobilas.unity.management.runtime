@@ -4,13 +4,12 @@ namespace Cobilas.Unity.Management.Runtime {
     [Obsolete]
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public sealed class CRIOLM_CallWhenAttribute : CRIOLMBaseAttribute {
-        private Type target;
+        private readonly Type target;
 
         public Type Target => target;
 
-        public CRIOLM_CallWhenAttribute(Type target, CRIOLMType type) : base() {
+        public CRIOLM_CallWhenAttribute(Type target, CRIOLMType type) : base(type) {
             this.target = target;
-            this.type = type;
         }
 
         public CRIOLM_CallWhenAttribute(Type target) : this(target, CRIOLMType.AfterSceneLoad) { }

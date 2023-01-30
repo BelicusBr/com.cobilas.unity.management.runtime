@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 
 namespace Cobilas.Unity.Management.Runtime {
@@ -27,6 +27,7 @@ namespace Cobilas.Unity.Management.Runtime {
             order = default;
             info = (MethodInfo)null;
             priority = default;
+            idCall = (string)null;
         }
 
         public void Invok()
