@@ -4,6 +4,8 @@
 - Remoção de atribuições desnecessárias.
 - Simplificação de operações matemáticas.
 - Transformando possiveis campos em `readonly`.
+### Fixed
+- Agora a lista de `CRIOLM_BeforeSceneLoadAttribute` é tratada antes de ser mesclada com a lista `startScene` para evitar inserir referências nulas.
 ## [1.0.11] 24/11/2022
 ### Change
 O atributo `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]`

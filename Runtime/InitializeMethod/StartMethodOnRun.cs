@@ -159,7 +159,9 @@ namespace Cobilas.Unity.Management.Runtime {
 
         private static void Old_BuildStockList(Type[] types, Dictionary<AffiliationPriority, BootContainer> boots) {
             MethodInfo[] startScene = GetMethodWithAttribute<CRIOLM_AfterSceneLoadAttribute>(types);
-            ArrayManipulation.Add(GetMethodWithAttribute<CRIOLM_BeforeSceneLoadAttribute>(types), ref startScene);
+            MethodInfo[] startScene2 = GetMethodWithAttribute<CRIOLM_BeforeSceneLoadAttribute>(types);
+            if (!ArrayManipulation.EmpytArray(startScene2))
+                ArrayManipulation.Add(startScene2, ref startScene);
 
             for (int I = 0; I < ArrayManipulation.ArrayLength(startScene); I++) {
                 CRIOLMBaseAttribute batt = startScene[I].GetCustomAttribute<CRIOLMBaseAttribute>();
