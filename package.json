@@ -3,22 +3,19 @@
   "version": "1.0.12",
   "displayName": "Cobilas Management Runtime",
   "description": "Pacote de gerenciamento runtime para unity3d",
-    "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
+  "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
   "changelogUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/CHANGELOG.md",
   "unity": "2019.1",
   "unityRelease": "0b5",
-  "type": "cb-runtime",
-  
+  "type": "tool",
   "author": {
     "name": "Cobilas CTB"
   },
-
   "repository": {
-    "url" : "https://github.com/BelicusBr/com.cobilas.unity.management.runtime.git",
-    "type" : "git"
+    "url": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime.git",
+    "type": "git"
   },
-  
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@BelicusBr"
+    "registry": "https://npm.pkg.github.com/@BelicusBr"
   }
 }
