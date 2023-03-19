@@ -3,7 +3,6 @@
     "references": [
         "Cobilas.Unity.Utility",
         "Cobilas.Unity.Extensions",
-        "Cobilas.Unity.Mono",
         "Cobilas.Core"
     ],
     "includePlatforms": [],
