@@ -2,12 +2,10 @@
 using UnityEngine;
 using System.Reflection;
 using System.Diagnostics;
-using Cobilas.Unity.Mono;
 using Cobilas.Collections;
-using CCobilasConsole = Cobilas.CobilasConsole;
 
 namespace Cobilas.Unity.Management.Container {
-    public class Contentor : CobilasBehaviour {
+    public class Contentor : MonoBehaviour {
 
         public Component AddComponent(Type component) {
             if (!VerifikInitContainerManager())
@@ -25,7 +23,7 @@ namespace Cobilas.Unity.Management.Container {
             => ContainsComponent(typeof(T));
         //Init
         private bool VerifikInitContainerManager() {
-            StackFrame[] frames = CCobilasConsole.TrackMethod();
+            StackFrame[] frames = PrintOut.TrackMethod();
             for (int I = 0; I < ArrayManipulation.ArrayLength(frames); I++) {
                 MethodBase method = frames[I].GetMethod();
                 if (method.Name == "Init" && method.ReflectedType == typeof(ContainerManager))

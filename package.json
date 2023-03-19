@@ -1,6 +1,6 @@
 {
   "name": "com.cobilas.unity.management.runtime",
-  "version": "1.0.12",
+  "version": "1.14.0",
   "displayName": "Cobilas Management Runtime",
   "description": "Pacote de gerenciamento runtime para unity3d",
   "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
@@ -29,5 +29,10 @@
     "C#",
     "CSharp"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "com.cobilas.core": "^2.0.0",
+    "com.cobilas.unity.extensions": "^1.20.0",
+    "com.cobilas.unity.utility": "^2.6.0"
+  }
 }
