@@ -13,9 +13,6 @@
     "url": "git+https://github.com/BelicusBr/com.cobilas.unity.management.runtime.git",
     "type": "git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@BelicusBr"
-  },
   "bugs": {
     "url": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/issues"
   },
