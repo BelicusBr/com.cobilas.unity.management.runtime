@@ -105,8 +105,6 @@ namespace Cobilas.Unity.Management.Runtime {
                 boots[sbsla.BootType].Add(new MethodManifest(startScene[I], sbsla.IDCall, sbsla.Order, sbsla.Priority));
             }
 
-            Old_BuildStockList(types, boots);
-
             for (int I = 0; I < 5; I++)
                 boots[(AffiliationPriority)I].Reorder();
 
@@ -122,70 +120,7 @@ namespace Cobilas.Unity.Management.Runtime {
                                 new MethodManifest(callMe[I], 0L, call.Priority));
                         }
             }
-
-            Old_BuildCallMeList(types, boots);
         }
-
-#pragma warning disable CS0612
-        private static void Old_BuildCallMeList(Type[] types, Dictionary<AffiliationPriority, BootContainer> boots) {
-            MethodInfo[] callMe = GetMethodWithAttribute<CRIOLM_CallWhenAttribute>(types);
-            for (int I = 0; I < ArrayManipulation.ArrayLength(callMe); I++) {
-                CRIOLM_CallWhenAttribute call = callMe[I].GetCustomAttribute<CRIOLM_CallWhenAttribute>();
-                int index;
-                if (call.Target == callMe[I].ReflectedType) {
-                    Debug.LogError($"[CRIOLM]CallWhen.Target: {callMe[I]}");
-                    continue;
-                }
-
-                if (boots[AffiliationPriority.StartBefore].ContainsIDCall(call.Target.FullName)) {
-                    index = boots[AffiliationPriority.StartBefore].IDCallIndex(call.Target.FullName);
-                    index = call.Type == CRIOLMType.AfterSceneLoad ? index + 1 : index;
-
-                    boots[AffiliationPriority.StartBefore].Insert(
-                        index, new MethodManifest(callMe[I], 0L,
-                         (call.Type == CRIOLMType.AfterSceneLoad) ?
-                            InitializePriority.Low : InitializePriority.High));
-                } else if (boots[AffiliationPriority.StartLater].ContainsIDCall(call.Target.FullName)) {
-                    index = boots[AffiliationPriority.StartLater].IDCallIndex(call.Target.FullName);
-                    index = call.Type == CRIOLMType.AfterSceneLoad ? index + 1 : index;
-                    
-                    boots[AffiliationPriority.StartLater].Insert(
-                        index, new MethodManifest(callMe[I], 0L,
-                         (call.Type == CRIOLMType.AfterSceneLoad) ?
-                            InitializePriority.Low : InitializePriority.High));
-                }
-            }
-        }
-
-        private static void Old_BuildStockList(Type[] types, Dictionary<AffiliationPriority, BootContainer> boots) {
-            MethodInfo[] startScene = GetMethodWithAttribute<CRIOLM_AfterSceneLoadAttribute>(types);
-            MethodInfo[] startScene2 = GetMethodWithAttribute<CRIOLM_BeforeSceneLoadAttribute>(types);
-            if (!ArrayManipulation.EmpytArray(startScene2))
-                ArrayManipulation.Add(startScene2, ref startScene);
-
-            for (int I = 0; I < ArrayManipulation.ArrayLength(startScene); I++) {
-                CRIOLMBaseAttribute batt = startScene[I].GetCustomAttribute<CRIOLMBaseAttribute>();
-                long order = 0L;
-                InitializePriority priority;
-                switch (batt.PriorityType) {
-                    case CRIOLMPriority.Comum :
-                        order = batt.Priority;
-                        priority = InitializePriority.None;
-                        break;
-                    default:
-                        priority = (InitializePriority)(((int)batt.PriorityType) + 1);
-                        break;
-                }
-                if (batt is CRIOLM_AfterSceneLoadAttribute) {
-                    boots[AffiliationPriority.StartLater].Add(new MethodManifest(
-                        startScene[I], startScene[I].ReflectedType.FullName, order, priority));
-                } else if (batt is CRIOLM_BeforeSceneLoadAttribute) {
-                    boots[AffiliationPriority.StartBefore].Add(new MethodManifest(
-                        startScene[I], startScene[I].ReflectedType.FullName, order, priority));
-                }
-            }
-        }
-#pragma warning restore CS0612
 
         private static MethodInfo[] GetMethods(Type type)
             => type.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
