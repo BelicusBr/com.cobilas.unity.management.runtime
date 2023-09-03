@@ -12,7 +12,7 @@ namespace Cobilas.Unity.Management.Container {
         [SerializeField] private SceneContainer volatileContainer;
         [SerializeField] private SceneContainer permanentContainer;
     
-        [StartBeforeSceneLoad]
+        [StartBeforeSceneLoad("#SceneContainerManager")]
         private static void Init() {
             SceneContainerManager game = new GameObject("Scene container manager", typeof(SceneContainerManager)).GetComponent<SceneContainerManager>();
             DontDestroyOnLoad(game);
