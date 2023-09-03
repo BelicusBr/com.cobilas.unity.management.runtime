@@ -1,6 +1,24 @@
 # Changelog
+## [2.0.0] - 03/09/2023
+### Changed
+- O `ContainerManager` foi substituido pelo `SceneContainerManager`.
+### Removed
+```c#
+    public static class ContainerManager;
+    public class Contentor;
+    public sealed class AddToPermanentContainerAttribute;
+    public abstract class AddToContainerBaseAttribute;
+    public sealed class AddToContainerAttribute;
+```
+### Added
+```c#
+    public sealed class SceneContainerManager;
+    public sealed class SceneContainer;
+    public interface ISceneContainerItem;
+    public sealed class AddSceneContainerAttribute;
+```
 ## [1.15.0] - 29/08/2023
-## Changed
+### Changed
 - As dependencias do pacote foram aluteradas.
 ## [1.14.0-ch1] - 28/08/2023
 ### Changed
