@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Text;
 using System.Reflection;
 using Cobilas.Collections;
-using Cobilas.Unity.Utility;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -96,7 +95,7 @@ namespace Cobilas.Unity.Management.Runtime {
         }
 
         private static void BuildStockList(Dictionary<AffiliationPriority, BootContainer> boots) {
-            Type[] types = UnityTypeUtility.GetAllTypes();
+            Type[] types = TypeUtilitarian.GetTypes();
             MethodInfo[] startScene = GetMethodWithAttribute<StartBaseSceneLoadAttribute>(types);
             MethodInfo[] callMe = GetMethodWithAttribute<CallWhenStartAttribute>(types);
 

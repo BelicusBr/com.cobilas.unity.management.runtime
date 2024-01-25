@@ -1,7 +1,8 @@
 {
     "name": "Cobilas.Unity.Management.Runtime",
     "references": [
-        "Cobilas.Unity.Utility",
+        "Cobilas.Core.Net4x",
+        
         "Cobilas.Unity.Management.Runtime.Build"
     ],
     "includePlatforms": [],

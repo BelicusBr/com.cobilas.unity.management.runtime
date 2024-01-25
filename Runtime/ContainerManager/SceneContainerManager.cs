@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.Reflection;
 using Cobilas.Collections;
-using Cobilas.Unity.Utility;
 using UnityEngine.SceneManagement;
 using Cobilas.Unity.Management.Runtime;
 
@@ -17,7 +16,7 @@ namespace Cobilas.Unity.Management.Container {
             SceneContainerManager game = new GameObject("Scene container manager", typeof(SceneContainerManager)).GetComponent<SceneContainerManager>();
             DontDestroyOnLoad(game);
             
-            Type[] types = UnityTypeUtility.GetAllTypes();
+            Type[] types = TypeUtilitarian.GetTypes();
             for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++) {
                 if (typeof(ISceneContainerItem).IsAssignableFrom(types[A])) {
                     if (types[A].GetCustomAttribute<AddSceneContainerAttribute>() is AddSceneContainerAttribute addScene)
