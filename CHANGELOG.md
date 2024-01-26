@@ -1,43 +1,46 @@
 # Changelog
+## [2.1.0] 25/01/2024
+### Changed
+A change in package dependencies.
 ## [2.0.0] - 03/09/2023
 ### Changed
-- O `ContainerManager` foi substituido pelo `SceneContainerManager`.
+- `ContainerManager` has been replaced by `SceneContainerManager`.
 ### Removed
 ```c#
-    public static class ContainerManager;
-    public class Contentor;
-    public sealed class AddToPermanentContainerAttribute;
-    public abstract class AddToContainerBaseAttribute;
-    public sealed class AddToContainerAttribute;
+     public static class ContainerManager;
+     public class Container;
+     public sealed class AddToPermanentContainerAttribute;
+     public abstract class AddToContainerBaseAttribute;
+     public sealed class AddToContainerAttribute;
 ```
 ### Added
 ```c#
-    public sealed class SceneContainerManager;
-    public sealed class SceneContainer;
-    public interface ISceneContainerItem;
-    public sealed class AddSceneContainerAttribute;
+     public sealed class SceneContainerManager;
+     public sealed class SceneContainer;
+     public interface ISceneContainerItem;
+     public sealed class AddSceneContainerAttribute;
 ```
 ## [1.15.0] - 29/08/2023
 ### Changed
-- As dependencias do pacote foram aluteradas.
+- Package dependencies have been changed.
 ## [1.14.0-ch1] - 28/08/2023
 ### Changed
-- O autor do pacote foi alterado de `Cobilas CTB` para `BélicusBr`.
+- The package author was changed from `Cobilas CTB` to `BélicusBr`.
 ## [1.0.12] - 30/01/2023
 ### Changed
-- Remoção de atribuições desnecessárias.
-- Simplificação de operações matemáticas.
-- Transformando possiveis campos em `readonly`.
-### Fixed
-- Agora a lista de `CRIOLM_BeforeSceneLoadAttribute` é tratada antes de ser mesclada com a lista `startScene` para evitar inserir referências nulas.
-## [1.0.11] 24/11/2022
-### Change
-O atributo `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]`
-foi adicionado em `void StartMethodOnRun.Init()` para a versão `UNITY_2019_2_OR_NEWER`.
+- Removal of unnecessary assignments.
+- Simplification of mathematical operations.
+- Transforming possible fields into `readonly`.
+###Fixed
+- Now the `CRIOLM_BeforeSceneLoadAttribute` list is handled before being merged with the `startScene` list to avoid inserting null references.
+## [1.0.11] 24/11/2021
+###Change
+The `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]` attribute
+was added in `void StartMethodOnRun.Init()` for version `UNITY_2019_2_OR_NEWER`.
 ## [1.0.10] 17/11/2022
-### Change
-O `CobilasRuntimeInitializeOnLoadMethod` foi substituido pelo `StartMethodOnRun`,</br>
-o `StartMethodOnRun` mantem o suporte com o `CobilasRuntimeInitializeOnLoadMethod`.
+###Change
+`CobilasRuntimeInitializeOnLoadMethod` has been replaced by `StartMethodOnRun`,</br>
+`StartMethodOnRun` maintains support with `CobilasRuntimeInitializeOnLoadMethod`.
 ## [1.0.8] 13/08/2022
 - Move Editor\CobilasBuildProcessor.cs > Runtime\Build\CobilasBuildProcessor.cs
 - Move Editor\CobilasCompilationPipeline.cs > Runtime\Build\CobilasCompilationPipeline.cs
@@ -54,7 +57,7 @@ o `StartMethodOnRun` mantem o suporte com o `CobilasRuntimeInitializeOnLoadMetho
 - Fix CHANGELOG.md
 - Fix package.json
 - Fix CobilasRuntimeInitializeOnLoadMethod.cs
-- > A instrução `if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();` foi adicionada em `private static void Init(); private static void CheckCRIOLMPriority();`.
+- > The statement `if (RunList == null) RunList = new Dictionary<CRIOLMType, RunItem>();` was added in `private static void Init(); private static void CheckCRIOLMPriority();`.
 ## [1.0.5] 23/07/2022
 - Add CHANGELOG.md
 - Fix package.json
@@ -73,5 +76,5 @@ o `StartMethodOnRun` mantem o suporte com o `CobilasRuntimeInitializeOnLoadMetho
 - Add LICENSE.md
 - Add folder:Runtime
 ## [0.0.1] 15/07/2022
-### Repositorio com.cobilas.unity.management.runtime iniciado
-- Lançado para o GitHub
+### Repository com.cobilas.unity.management.runtime started
+- Released to GitHub

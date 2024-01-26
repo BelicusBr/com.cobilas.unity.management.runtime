@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Cobilas.Collections;
-using Cobilas.Unity.Utility;
 using UnityEngine.SceneManagement;
 
 namespace Cobilas.Unity.Management.Container {
@@ -26,7 +25,12 @@ namespace Cobilas.Unity.Management.Container {
         }
 
         public void Add(SceneContainerManager.ContainerItem item) {
-            Type type = UnityTypeUtility.GetType(item.FullName);
+            Type type = null;
+            foreach (var ty in TypeUtilitarian.GetTypes())
+                if (ty.FullName == item.FullName) {
+                    type = ty;
+                    break;
+                }
             ArrayManipulation.Add((MonoBehaviour)gameObject.AddComponent(type), ref containers);
         }
 
