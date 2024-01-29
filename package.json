@@ -1,6 +1,6 @@
 {
   "name": "com.cobilas.unity.management.runtime",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "displayName": "Cobilas Management Runtime",
   "description": "Runtime management package for unity3d.",
   "licensesUrl": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime/blob/main/LICENSE.md",
@@ -19,7 +19,6 @@
   "homepage": "https://github.com/BelicusBr/com.cobilas.unity.management.runtime#readme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "init_pack": "npm pack --pack-destination C:/local.npm"
   },
   "keywords": [

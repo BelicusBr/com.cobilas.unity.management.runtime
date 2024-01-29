@@ -41,12 +41,14 @@ namespace Cobilas.Unity.Management.Container {
 
         private void SceneManager_sceneUnloaded(Scene arg0) {
             for (int I = 0; I < ArrayManipulation.ArrayLength(containers); I++)
-                (containers[I] as ISceneContainerItem).sceneUnloaded(arg0);
+                if (containers[I] is ISceneContainerItem isci)
+                    isci.sceneUnloaded(arg0);
         }
 
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1) {
             for (int I = 0; I < ArrayManipulation.ArrayLength(containers); I++)
-                (containers[I] as ISceneContainerItem).sceneLoaded(arg0, arg1);
+                if (containers[I] is ISceneContainerItem isci)
+                    isci.sceneLoaded(arg0, arg1);
         }
     }
 }
