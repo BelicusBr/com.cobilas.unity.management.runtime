@@ -1,4 +1,6 @@
 # Changelog
+## [2.2.0] 28/01/2024
+When adding a `MonoBehaviour` class to `SceneContainerManager` it was mandatory for the class to inherit the `ISceneContainerItem` interface but now the `ISceneContainerItem` interface is optional.
 ## [2.1.0] 25/01/2024
 ### Changed
 A change in package dependencies.

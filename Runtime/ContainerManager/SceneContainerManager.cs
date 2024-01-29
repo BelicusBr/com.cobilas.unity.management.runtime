@@ -17,12 +17,9 @@ namespace Cobilas.Unity.Management.Container {
             DontDestroyOnLoad(game);
             
             Type[] types = TypeUtilitarian.GetTypes();
-            for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++) {
-                if (typeof(ISceneContainerItem).IsAssignableFrom(types[A])) {
-                    if (types[A].GetCustomAttribute<AddSceneContainerAttribute>() is AddSceneContainerAttribute addScene)
-                        ArrayManipulation.Add(new ContainerItem(types[A].FullName, addScene.BuildIndex), ref game.itens);
-                }
-            }
+            for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++)
+                if (types[A].GetCustomAttribute<AddSceneContainerAttribute>() is AddSceneContainerAttribute addScene)
+                    ArrayManipulation.Add(new ContainerItem(types[A].FullName, addScene.BuildIndex), ref game.itens);
         }
     
         private void Start() {
