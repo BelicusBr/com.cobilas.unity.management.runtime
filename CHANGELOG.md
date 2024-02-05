@@ -1,4 +1,8 @@
 # Changelog
+## [2.2.1] (05/02/2024)
+- ### Changed
+- - Updated dependency `com.cobilas.unity.core.net4x` to version `1.4.1`.
+- - This update includes bug fixes and new features that do not directly impact this package.
 ## [2.2.0] 28/01/2024
 When adding a `MonoBehaviour` class to `SceneContainerManager` it was mandatory for the class to inherit the `ISceneContainerItem` interface but now the `ISceneContainerItem` interface is optional.
 ## [2.1.0] 25/01/2024
