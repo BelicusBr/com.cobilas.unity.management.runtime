@@ -20,9 +20,10 @@ namespace Cobilas.Unity.Management.Container {
             for (int A = 0; A < ArrayManipulation.ArrayLength(types); A++)
                 if (types[A].GetCustomAttribute<AddSceneContainerAttribute>() is AddSceneContainerAttribute addScene)
                     ArrayManipulation.Add(new ContainerItem(types[A].FullName, addScene.BuildIndex), ref game.itens);
+            game.Ignition();
         }
     
-        private void Start() {
+        private void Ignition() {
             SceneManager.sceneLoaded += SceneManager_sceneLoaded;
             permanentContainer = new GameObject("Permanent container").AddComponent<SceneContainer>();
             DontDestroyOnLoad(permanentContainer);
